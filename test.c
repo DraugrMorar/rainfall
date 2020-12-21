@@ -2,13 +2,13 @@
 #include <string.h>
 #include <unistd.h>
 
-void n(void)
-{
-        system("/bin/cat /home/user/level3/.pass");
-}
-
 int main(void)
 {
-    n();
-    return ;
+    char a[512];
+
+    fgets(a, 512, stdin);
+    printf(a, 512);
+    return 1;
 }
+
+

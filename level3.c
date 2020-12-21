@@ -8,7 +8,7 @@ void v(void)
     char a[512];
 
     fgets(a, 512, stdin);
-    printf("%p\n", str);
+    printf(a, 512);
     if(smt == 64)
     {
     fwrite("Wait what?!\n", 1, 12, stdout);

