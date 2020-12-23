@@ -15,7 +15,7 @@ void n(void)
     char a[508];
 
     fgets(a, 508, stdin);
-    printf("%s", a);
+    printf(a, 512);
     exit(0);
 }
 

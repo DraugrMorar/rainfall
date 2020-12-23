@@ -4,17 +4,16 @@
 
 static int	smt = 0;
 
-void p(char *str)
+int p(char *str)
 {
-    printf("%s", str);
+    printf(str, str);
 }
 
 void n(void)
 {
     char a[508];
-
     fgets(a, 508, stdin);
-    p(a);
+    smt = p(a);
     if(smt  == 16930116)
     {
         system("/bin/cat /home/user/level5/.pass");
