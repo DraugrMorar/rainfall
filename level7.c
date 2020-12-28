@@ -1,31 +1,25 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
-char pass[80];
+char pass[68];
 
 void m(void)
 {
   printf("%s - %d\n", pass, time(0));
-  return;
 }
 
 int main(int argc,char **argv)
 {
-  char *s1;
-  char *s2;
+  void *a = malloc(8); //0x804a008
+  void *b = malloc(8); //0x804a018
+  void *c = malloc(8); //0x804a028
+  void *d = malloc(8); //0x804a038
   FILE *fs;
-
-  s1 = (char *)malloc(8);
-  *s1 = 1;
-
-  s2 = (char *)malloc(8);
-  *s2 = 2;
-
-  strcpy(s1[1], argv[1]);
-  strcpy(s2[1], argv[2]);
-
-  fs = fopen("q","r");
+  strcpy(b, argv[1]);
+  strcpy(d, argv[2]);
+  fs = fopen("/home/user/level8/.pass","r");
   fgets(pass, 68, fs);
   puts("~~");
   return 0;
