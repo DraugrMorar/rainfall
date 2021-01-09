@@ -21,5 +21,5 @@ void p(void)
 int main(void)
 {
     p();
-    return ;
+    return 0;
 }

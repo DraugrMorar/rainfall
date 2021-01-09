@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include <stdlib.h>
 
 static int	m = 0;
 
@@ -23,5 +22,5 @@ void n(void)
 int main(void)
 {
     n();
-    return ;
+    return 0;
 }

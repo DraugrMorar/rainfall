@@ -15,7 +15,7 @@ void n(void)
     return ;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
  char *s;
   void (*f)(void);
@@ -27,5 +27,5 @@ int main(void)
   strcpy(s, argv[1]);
 
   f();
-    return ;
+    return 0;
 }

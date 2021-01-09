@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include <stdlib.h>
 
 int	m = 0;
 void v(void)
@@ -19,5 +18,5 @@ void v(void)
 int main(void)
 {
     v();
-    return ;
+    return 0;
 }

@@ -22,5 +22,5 @@ void n(void)
 int main(void)
 {
     n();
-    return ;
+    return 0;
 }
