@@ -2,7 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 
-static int	smt = 0;
+static int	m = 0;
 
 int p(char *str)
 {
@@ -13,8 +13,8 @@ void n(void)
 {
     char a[508];
     fgets(a, 508, stdin);
-    smt = p(a);
-    if(smt  == 16930116)
+    m = p(a);
+    if(m  == 16930116)
     {
         system("/bin/cat /home/user/level5/.pass");
     }

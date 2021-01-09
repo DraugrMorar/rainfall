@@ -1,29 +1,38 @@
-#include <stdlib.h>
+#include <unistd.h>
+#include <cstring>
 
-int main(int ac, char **av) {
-	
-	char buff[32];
-	
-	if (ac == 1) exit();
+class N {
+public:
+	int nb;
+	int (N::*func)(N &);
+	char annotation[100];
 
-	void *a = _Znwj@plt();
-	_ZN1NC2E(a, 5);
-	_Znwj@plt();
-	_ZN1NC2Ei();
-	_ZN1N13setAnnotationEPc(buff, av[1]);
-	return(0);
+	N(int val) : nb(val)
+	{
+		this->func = &N::operator+;
+	}
+	int operator+(N &right)
+	{
+		return this->nb + right.nb;
+	}
+	int operator-(N &right)
+	{
+		return this->nb - right.nb;
+	}
+	void setAnnotation(char *str)
+	{
+		memcpy(this->annotation, str, strlen(str));
+	}
+};
+
+int		main(int ac, char **av)
+{
+	if (ac < 1)
+		_exit(1);
+
+	N *a = new N(5);
+	N *b = new N(6);
+
+	a->setAnnotation(av[1]);
+	return (b->*(b->func))(*a);
 }
-
-void
-_ZN1NC2Ei(void *a, int b) {
-
-	/* fonction qui pue */
-}
-
-void
-_ZN1N13setAnnotationEPc(char *buff, char *a){
-
-	size_t len = strlen(a);
-	memcpy(buff, a, len);
-}
- 

@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-
+int m = 0;
 void o(char *str)
 {
     system("/bin/sh");

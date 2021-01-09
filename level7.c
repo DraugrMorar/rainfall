@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-char pass[68];
+char c[68];
 
 void m(void)
 {
-  printf("%s - %d\n", pass, time(0));
+  printf("%s - %d\n", c, time(0));
 }
 
 int main(int argc,char **argv)
@@ -20,7 +20,7 @@ int main(int argc,char **argv)
   strcpy(b, argv[1]);
   strcpy(d, argv[2]);
   fs = fopen("/home/user/level8/.pass","r");
-  fgets(pass, 68, fs);
+  fgets(c, 68, fs);
   puts("~~");
   return 0;
 }

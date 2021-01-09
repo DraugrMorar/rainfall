@@ -11,7 +11,7 @@ void p(void)
     gets(a);
     if(((unsigned long)str & 0xb0000000) == 0xb0000000)
     {
-        printf("%p\n", str);
+        printf("(%p)", str);
         _exit(1);
     }
     puts(a);
